@@ -9,6 +9,6 @@ public class Hello {
 
     @RequestMapping("/")
     public String sayHello(){
-        return "The Hello world from spring bott";
+        return "The Hello world from spring bott , lets see";
     }
 }
