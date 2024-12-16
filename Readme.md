@@ -75,8 +75,34 @@
 - The Spring container uses the @Autowired annotation to inject the dependencies into the object's setter methods.
 
 
+
+## Front controler?
+
+![frontController](./readmeImages/1.png)
+
+- This is some one who know which request to send to which controller as we may have multiple controller in a file
+- some exaples of controlers
+
+- a Baic hello world controller
+```java
+@RestController//this tell spring that this is a rest controller
+public class HelloWorldController {
+    @RequestMapping("/")//mapping to a particular end points
+    public String sayHello() {
+        return "Hello, World!";
+    }
+}
+```
+- If you remove "rest" from the restcontroller it will try to find a file named hello world in the templates folder and return the html file(like the old days)
+
+
+
+
+
 ## What is Spring Boot MVC?
 
+
+### Note: The MVC video was great but too many things to procees so I guess I will go in detail as I go forward not point in sitting here
 - Spring Boot MVC is a model-view-controller (MVC) framework that is built on the top of the Spring framework.
 - Spring Boot MVC is used to develop web-based applications.
 - Spring Boot MVC provides a way to separate the business logic, presentation logic, and navigation logic of an application.
@@ -90,5 +116,51 @@
 - Spring Boot MVC uses the @ExceptionHandler annotation to handle the exceptions that occur during the execution of an application.
 - Spring Boot MVC uses the @ControllerAdvice annotation to create a global exception handler for an application.
 - Spring Boot MVC uses the @RestController annotation to create a RESTful web service in an application.
+
+### Some points about MVC
+
+- MVC stands for Model-View-Controller.
+- Model: It represents the data of an application its like schima of the data
+- its a package that contains the classes that are used to store the data of an application.
+- Controller: It represents the business logic of an application,but normaly we use service layer to do this i.e logic part and controller to handle the request and response
+- its a package that contains the classes that are used to handle the HTTP requests and responses of an application.
+- View: It represents the presentation logic of an application
+
+
+## Get and Post request
+
+- Get request is used to get the data from the server(Baisc stuff)
+- Post request is used to send the data to the server(Baisc stuff)
+
+examples:
+
+- Get request
+```java
+@GetMapping("/hello")//this is a get request
+public String sayHello() {
+    return "Hello, World!";
+}
+```
+
+- Post request
+```java
+@PostMapping("/hello")//this is a post request
+public String sayHello() {
+    return "Hello, World!";
+}
+```
+
+- get request for a particular id
+```java
+@GetMapping("/hello/{id}")//this is a get request
+public String sayHello(@PathVariable int id) {
+    return "Hello, World!";
+}
+```
+
+
+
+
+
 
 
