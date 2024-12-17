@@ -158,6 +158,25 @@ public String sayHello(@PathVariable int id) {
 }
 ```
 
+- similar stuff for put and delete request
+
+
+## What is Spring Boot Data JPA?
+
+- Spring Boot Data JPA is a project that is built on the top of the Spring framework.
+- Spring Boot Data JPA is used to develop data access layer of an application.
+- Spring Boot Data JPA provides a way to interact with the database of an application.
+- Hibernate ORM is one of the popular implementations of the JPA specification.
+- ORM stands for Object-Relational Mapping like we have mongoose in nodejs for mongodb
+
+## What is H2?
+
+- H2 is an in-memory database that is used to develop and test the data access layer of an application.
+- H2 is a lightweight database that is written in Java.
+- H2 provides a web-based console to interact with the database of an application.
+
+
+
 
 
 
