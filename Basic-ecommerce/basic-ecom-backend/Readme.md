@@ -54,3 +54,69 @@
 - and so on , there are many more annotation that we can useW
 
 
+## What is injection ?
+
+- Injection is a process of injecting the object of a class into another class
+- There are two types of injection
+    - Constructor Injection
+    - Setter Injection
+- Example :
+    - Constructor Injection
+        ```java
+        @Service
+        public class ProductService {
+            private final ProductRepository productRepository;
+
+            @Autowired
+            public ProductService(ProductRepository productRepository) {
+                this.productRepository = productRepository;
+            }
+        }
+        ```
+        - Here we are injecting the object of ProductRepository into ProductService class
+        - We are using `@Autowired` annotation to inject the object
+    - Setter Injection
+        ```java
+        @Service
+        public class ProductService {
+            private ProductRepository productRepository;
+
+            @Autowired
+            public void setProductRepository(ProductRepository productRepository) {
+                this.productRepository = productRepository;
+            }
+        }
+        ```
+        - Here we are injecting the object of ProductRepository into ProductService class
+        - We are using `@Autowired` annotation to inject the object
+        - We are using a setter method to inject the object
+- Field Injection
+    ```java
+    @Service
+    public class ProductService {
+        @Autowired
+        private ProductRepository productRepository;
+    }
+    ```
+    - Here we are injecting the object of ProductRepository into ProductService class
+    - We are using `@Autowired` annotation to inject the object
+    - We are using a field to inject the object
+
+  
+  ### What is recommended way of injection ?
+
+  - Constructor Injection is the recommended way of injection
+  - This is because it makes the class immutable
+  - It makes the class thread safe
+  - It makes the class easy to test
+  -(Truely speaking I dont get this thing in detail yet but we will get it as we go on 🤞🏽)
+
+
+  ## What is `@Repository` annotation ?
+
+  - `@Repository` is a Spring annotation that indicates that the decorated class is a repository
+  - A repository is a mechanism for encapsulating storage, retrieval, and search behavior which emulates a collection of objects
+  
+
+
+
